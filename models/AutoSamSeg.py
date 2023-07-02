@@ -6,7 +6,7 @@ import torch.nn.functional as F
 from segment_anything.modeling.prompt_encoder import PositionEmbeddingRandom
 
 
-class SamSeg(nn.Module):
+class AutoSamSeg(nn.Module):
     def __init__(
         self,
         image_encoder,

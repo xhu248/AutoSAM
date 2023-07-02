@@ -19,7 +19,7 @@ python scripts/inference.py --src_dir ../DATA/${dataset} -b 1 \
 
 #fold=0
 #tr_size=10
-#python main_dist_seg.py --src_dir ../DATA/synapse --dist-url 'tcp://localhost:10001' \
+#python main_autosam_seg.py --src_dir ../DATA/synapse --dist-url 'tcp://localhost:10001' \
 #--data_dir ../DATA/synapse/imgs/ \
 #--multiprocessing-distributed --world-size 1 --rank 0  \
 #--fold ${fold} --tr_size ${tr_size}  --model_type ${model_type} \

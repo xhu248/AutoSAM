@@ -3,7 +3,7 @@ import torch
 from functools import partial
 
 from .SamFeatSeg import SamFeatSeg, SegDecoderViT, SegDecoderCNN, SegDecoderLinear
-from .SamSeg import SamSeg
+from .AutoSamSeg import AutoSamSeg
 from .sam_decoder import MaskDecoder
 from segment_anything.modeling import ImageEncoderViT, TwoWayTransformer
 

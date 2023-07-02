@@ -54,34 +54,6 @@ class SamFeatSeg(nn.Module):
         return out
 
 
-class DinoViTSeg(nn.Module):
-    def __init__(
-        self,
-        image_encoder,
-        seg_decoder,
-    ):
-        super().__init__()
-        self.image_encoder = image_encoder
-        self.seg_decoder = seg_decoder
-
-    def forward(self,
-                x):
-        image_embedding = self.image_encoder.forward_features(x)["x_norm_patchtokens"] #[B, 256, 64, 64]
-        print(image_embedding.shape)
-        exit()
-        out = self.seg_decoder(image_embedding)
-        return out
-
-    def get_embedding(self, x):
-        image_embedding = self.image_encoder(x)
-        out = nn.functional.adaptive_avg_pool2d(image_embedding, 1).squeeze()
-        return out
-
-
-class SegDecoderViT(nn.Module):
-    pass
-
-
 class SegDecoderLinear(nn.Module):
     def __init__(self,
                  num_classes=14,
@@ -158,4 +130,3 @@ class SegDecoderCNN(nn.Module):
             x = blk(x)
         return self.final(x)
 
-        #TODO: x size should be reshaped to [H // 2**num_depth, W // 2**num_depth]

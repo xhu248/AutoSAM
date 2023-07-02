@@ -101,8 +101,6 @@ def main():
         model_checkpoint = 'sam_vit_l_0b3195.pth'
     elif args.model_type == 'vit_b':
         model_checkpoint = 'sam_vit_b_01ec64.pth'
-    elif args.model_type == 'dino_vit_b':
-        model_checkpoint = "dinov2_vitb14_pretrain.pth"
 
     #model = sam_seg_model_registry[args.model_type](checkpoint=model_checkpoint)
     model = sam_model_registry[args.model_type](checkpoint=model_checkpoint)

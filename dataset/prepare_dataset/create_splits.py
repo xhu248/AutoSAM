@@ -95,9 +95,9 @@ def create_folds(output_dir, image_dir, fold_num=5):
 
 def create_acdc_folds(output_dir, image_dir, fold_num=5):
     ppl_files = os.listdir(image_dir)
-    trainset_size = len(ppl_files) * 90 // 100
-    valset_size = len(ppl_files) * 5 // 100
-    testset_size = len(ppl_files) * 5 // 100
+    trainset_size = len(ppl_files) * 70 // 100
+    valset_size = len(ppl_files) * 15 // 100
+    testset_size = len(ppl_files) * 15 // 100
 
     splits = []
     for i in range(fold_num):

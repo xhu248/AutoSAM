@@ -3,7 +3,7 @@ import torch
 from functools import partial
 
 from .SamFeatSeg import SamFeatSeg, SegDecoderViT, SegDecoderCNN
-from .SamSeg import SamSeg
+from .AutoSamSeg import AutoSamSeg
 from .sam_decoder import MaskDecoder
 from segment_anything.modeling import ImageEncoderViT, TwoWayTransformer
 
@@ -19,7 +19,7 @@ def _build_sam_seg_model(
     prompt_embed_dim = 256
     image_size = 1024
     vit_patch_size = 16
-    sam_seg = SamSeg(
+    sam_seg = AutoSamSeg(
         image_encoder=ImageEncoderViT(
             depth=encoder_depth,
             embed_dim=encoder_embed_dim,
