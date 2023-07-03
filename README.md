@@ -48,7 +48,11 @@ python scripts/main_autosam_seg.py --src_dir ${ACDC_folder} --dist-url 'tcp://lo
 --multiprocessing-distributed --world-size 1 --rank 0  -b 4 --dataset ACDC \
 --fold ${fold} --tr_size ${tr_size}  --model_type ${model_type} --num_classes 4
 ```
+## Todo
+* Evaluate on more datasets
+* Add more baselines
 
+## Citation
 If you find our codes useful, please cite
 ```
 @article{hu2023efficiently,
